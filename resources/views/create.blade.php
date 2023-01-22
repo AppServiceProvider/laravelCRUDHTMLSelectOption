@@ -50,9 +50,21 @@
                             class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-state">
                             <option value="">Select Blood</option>
-                            @foreach ($citys as $value)
+                            {{-- way one  --}}
+                            {{-- @foreach ($citys as $value)
                                 <option value="{{ $value->name }}">{{ $value->name }}</option>
+                            @endforeach --}}
+                            {{-- way onae  --}}
+
+                            
+                            {{-- way two using elequent ORM database table --}}
+                            @foreach ($citys as $value)
+                                <option value="{{ $value->id }}">{{ $value->district_name }}</option>
                             @endforeach
+                            {{-- way two  --}}
+
+
+
                             {{-- <option value="a+">A Possitive</option>
                             <option value="a-">A Negative</option>
                             <option value="ab+">Ab Possitive</option>

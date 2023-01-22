@@ -48,7 +48,7 @@
                                 {{ $value->full_name }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $value->blood_donor_location }}
+                                {{ $value->district_model->district_name }}
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{route('donor.edit',$value->id)}}">EDIT</a>

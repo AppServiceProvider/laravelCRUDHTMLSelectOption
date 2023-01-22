@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDonorRequest;
 use App\Http\Requests\UpdateDonorRequest;
+use App\Models\District;
 use App\Models\Donor;
 use Illuminate\Support\Facades\DB;
 
@@ -16,10 +17,14 @@ class DonorController extends Controller
      */
     public function index()
     {
+        // way one 
         $citys = DB::table('citys')->select('name')->get();
         // $donors = DB::table('donors')->select(DB::raw('CONCAT(first_name, " ", last_name) as full_name'))->first();
-        $donors = Donor::paginate(4);
+        $donors = Donor::with('district_model')->paginate(4);
         return view('index', compact('donors', 'citys'));
+        // way two 
+
+        
     }
 
     /**
@@ -29,8 +34,13 @@ class DonorController extends Controller
      */
     public function create()
     {
-        $citys = DB::table('citys')->select('name')->get();
+        // $citys = DB::table('citys')->select('name')->get();
+        // return view('create',compact('citys'));
+
+        // way two
+        $citys = District::all();
         return view('create',compact('citys'));
+        // way two
     }
 
     /**
@@ -81,10 +91,17 @@ class DonorController extends Controller
 
 
         // way two 
-        $idWiseValue = $donor;
-        $city= DB::table('citys')->select('name')->get();
-        return view('edit', compact('donor', 'idWiseValue','city'));
+        // $idWiseValue = $donor;
+        // $city= DB::table('citys')->select('name')->get();
+        // return view('edit', compact('donor', 'idWiseValue','city'));
         // way two 
+
+
+        // way three 
+        $idWiseValue = $donor;
+        $city= District::all();
+        return view('edit', compact('donor', 'idWiseValue','city'));
+        // way three 
 
     }
 

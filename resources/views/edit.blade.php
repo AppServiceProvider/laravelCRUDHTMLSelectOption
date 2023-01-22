@@ -72,11 +72,17 @@
 
 
                             {{-- way two  --}}
-                            @foreach ($city as $value)
+                            {{-- @foreach ($city as $value)
                                 <option @if ($value->name == $idWiseValue->blood_donor_location) selected @endif value="{{ $value->name }}">{{ $value->name }}</option>
+                            @endforeach --}}
+                            {{-- way two  --}}
+
+
+                            
+                            {{-- way two  --}}
+                            @foreach ($city as $value)
+                                <option @if ($value->id == $idWiseValue->blood_donor_location) selected @endif value="{{ $value->id }}">{{ $value->district_name }}</option>
                             @endforeach
-                            {{-- akn ay citys table ar all data print hoby but id onojai city name select thkby  --}}
-                            {{-- citys table queary builder ar store data elequrent ORM  --}}
                             {{-- way two  --}}
 
                         </select>
