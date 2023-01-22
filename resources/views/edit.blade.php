@@ -84,7 +84,6 @@
                                 <option @if ($value->id == $idWiseValue->blood_donor_location) selected @endif value="{{ $value->id }}">{{ $value->district_name }}</option>
                             @endforeach
                             {{-- way two  --}}
-
                         </select>
                     </div>
                 </div>

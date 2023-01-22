@@ -58,7 +58,7 @@
 
                             
                             {{-- way two using elequent ORM database table --}}
-                            @foreach ($citys as $value)
+                            @foreach ($districts as $value)
                                 <option value="{{ $value->id }}">{{ $value->district_name }}</option>
                             @endforeach
                             {{-- way two  --}}

@@ -18,13 +18,14 @@ class DonorController extends Controller
     public function index()
     {
         // way one 
-        $citys = DB::table('citys')->select('name')->get();
+        // $citys = DB::table('citys')->select('name')->get();
         // $donors = DB::table('donors')->select(DB::raw('CONCAT(first_name, " ", last_name) as full_name'))->first();
-        $donors = Donor::with('district_model')->paginate(4);
-        return view('index', compact('donors', 'citys'));
-        // way two 
-
         
+
+        // $donors = Donor::with('district_model')->paginate(4);
+        $donors = Donor::paginate(4);
+        return view('index', compact('donors'));
+        // way two 
     }
 
     /**
@@ -38,8 +39,8 @@ class DonorController extends Controller
         // return view('create',compact('citys'));
 
         // way two
-        $citys = District::all();
-        return view('create',compact('citys'));
+        $districts = District::all();
+        return view('create',compact('districts'));
         // way two
     }
 
@@ -90,17 +91,17 @@ class DonorController extends Controller
 
 
 
-        // way two 
+        // way two
         // $idWiseValue = $donor;
         // $city= DB::table('citys')->select('name')->get();
         // return view('edit', compact('donor', 'idWiseValue','city'));
-        // way two 
+        // way two
 
 
         // way three 
         $idWiseValue = $donor;
         $city= District::all();
-        return view('edit', compact('donor', 'idWiseValue','city'));
+        return view('edit', compact('idWiseValue','city'));
         // way three 
 
     }

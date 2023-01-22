@@ -13,4 +13,5 @@ class District extends Model
     function donor_model(){
         return $this->hasOne(Donor::class);
     }
+    
 }
