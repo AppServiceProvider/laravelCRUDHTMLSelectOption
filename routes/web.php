@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DonorController;
 use App\Http\Controllers\UserController;
+use App\Models\LogicModel;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('donor', DonorController::class);
 Route::get('/add-user', [UserController::class, 'addUser']);
+Route::get('/get-data', [LogicModel::class, 'getData']);

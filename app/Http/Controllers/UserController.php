@@ -9,8 +9,8 @@ class UserController extends Controller
     //
     function addUser(){
         $user = new User;
-        $user->name = "tina";
-        $user->email = "tina@gmail.com";
+        $user->name = "hafisa";
+        $user->email = "hafisa@gmail.com";
         $user->password = \Hash::make('12345678');
         $user->save();
         dd($user);
