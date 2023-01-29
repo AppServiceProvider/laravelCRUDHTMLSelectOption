@@ -8,6 +8,9 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+  <h1>
+    @datatime
+  </h1>
     <div class="container mx-auto text-center mt-60">
         <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
             <a href="{{route('donor.index')}}">Show All</a>
