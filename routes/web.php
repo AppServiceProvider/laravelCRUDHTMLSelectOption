@@ -24,4 +24,6 @@ Route::get('/', function () {
 Route::resource('donor', DonorController::class);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/get-data', [LogicModel::class, 'getData']);
-Route::get('/test/{email}/{name}/{mobile}', [StudentController::class, 'index']);
+// Route::get('/test/{email}/{name}/{mobile}', [StudentController::class, 'index']);
+Route::get('/testTwo', [StudentController::class, 'index']);
+
